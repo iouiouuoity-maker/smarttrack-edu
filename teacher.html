@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartTrack Edu — Учитель</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <a class="back" href="index.html">← На главную</a>
+    <h1>Панель учителя</h1>
+    <p class="lead">Сводка и профили: смысл, коммуникация, выразительность, рефлексия.</p>
+  </header>
+
+  <main class="wrap section">
+    <section class="panel">
+      <div class="grid2">
+        <label>
+          Фильтр по классу
+          <select id="gradeFilter">
+            <option value="">Все</option>
+            <option>3</option><option>6</option><option>7</option><option>8</option>
+          </select>
+        </label>
+
+        <label>
+          Данные (для защиты/отчёта)
+          <button id="exportBtn" class="btn secondary" type="button">Скачать JSON</button>
+        </label>
+      </div>
+
+      <h2 style="margin:12px 0 10px">Сводка</h2>
+      <div id="summary" class="grid4"></div>
+
+      <div class="section">
+        <button id="clearBtn" class="btn secondary" type="button">Очистить данные (на этом устройстве)</button>
+        <p class="muted" style="margin:8px 0 0">Кнопка удаляет записи только в данном браузере.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 style="margin:0 0 10px">Ученики и профили</h2>
+      <div id="students" class="stack"></div>
+    </section>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script>
+    SmartTrack.initTeacherPage();
+  </script>
+</body>
+</html>
