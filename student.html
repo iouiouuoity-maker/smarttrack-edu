@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartTrack Edu — Ученик</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <a class="back" href="index.html">← На главную</a>
+    <h1>Ученик: MindTrace</h1>
+    <p class="lead">Запиши, как ты думал(а). Здесь важен путь мысли, а не угадывание.</p>
+  </header>
+
+  <main class="wrap section">
+    <form id="workForm" class="panel">
+      <div class="grid2">
+        <label>
+          Имя ученика
+          <input id="studentName" required placeholder="Напр: Аружан" />
+        </label>
+
+        <label>
+          Класс
+          <select id="grade" required>
+            <option value="">Выбери</option>
+            <option>3</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </label>
+      </div>
+
+      <label>
+        Задание
+        <select id="taskId" required></select>
+      </label>
+
+      <div id="taskPrompt" class="card" style="margin-top:10px">
+        <h2 style="margin:0 0 6px">Текст задания</h2>
+        <p class="muted" style="margin:0">Выбери класс и задание.</p>
+      </div>
+
+      <label>
+        Твой ответ (коротко и ясно)
+        <textarea id="answer" required rows="6" placeholder="Объясни: почему так? на что опирался(ась)?"></textarea>
+      </label>
+
+      <label>
+        Стратегия мышления (можно 1–3)
+        <div class="chips" id="strategyChips"></div>
+      </label>
+
+      <label>
+        Самооценка: насколько ты уверен(а)?
+        <input id="confidence" type="range" min="1" max="5" value="3" />
+        <div class="hint">1 — совсем не уверен(а) · 5 — уверен(а)</div>
+      </label>
+
+      <button class="btn" type="submit">Сохранить MindTrace</button>
+      <p class="muted">Данные сохраняются в этом браузере (LocalStorage).</p>
+    </form>
+
+    <section class="section">
+      <h2 style="margin:0 0 10px">Мои последние записи</h2>
+      <div id="feed" class="stack"></div>
+    </section>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script>
+    SmartTrack.initStudentPage();
+  </script>
+</body>
+</html>
