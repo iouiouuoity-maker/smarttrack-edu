@@ -10,7 +10,7 @@
   <header class="wrap">
     <a class="back" href="index.html">← На главную</a>
     <h1>Ученик: MindTrace</h1>
-    <p class="lead">Запиши, как ты думал(а). Здесь важен путь мысли, а не угадывание.</p>
+    <p class="lead">Сначала прочитай текст, потом выполни задания. Важен ход мысли.</p>
   </header>
 
   <main class="wrap section">
@@ -34,21 +34,28 @@
       </div>
 
       <label>
-        Задание
-        <select id="taskId" required></select>
+        Задание (текст + вопросы)
+        <select id="taskId" required>
+          <option value="">Сначала выбери класс</option>
+        </select>
       </label>
 
-      <div id="taskPrompt" class="card" style="margin-top:10px">
-        <h2 style="margin:0 0 6px">Текст задания</h2>
-        <p class="muted" style="margin:0">Выбери класс и задание.</p>
-      </div>
+      <section id="taskBlock" class="card" style="margin-top:12px; display:none;">
+        <h2 style="margin:0 0 8px" id="taskTitle">Задание</h2>
+        <div class="muted" id="taskMeta" style="margin-bottom:10px"></div>
 
-      <label>
-        Твой ответ (коротко и ясно)
-        <textarea id="answer" required rows="6" placeholder="Объясни: почему так? на что опирался(ась)?"></textarea>
-      </label>
+        <div style="margin-top:10px">
+          <div class="badge" style="margin-bottom:8px">ТЕКСТ</div>
+          <div id="taskText" style="line-height:1.7"></div>
+        </div>
 
-      <label>
+        <div style="margin-top:14px">
+          <div class="badge" style="margin-bottom:8px">ВОПРОСЫ</div>
+          <div id="questions" class="stack"></div>
+        </div>
+      </section>
+
+      <label style="margin-top:14px">
         Стратегия мышления (можно 1–3)
         <div class="chips" id="strategyChips"></div>
       </label>
